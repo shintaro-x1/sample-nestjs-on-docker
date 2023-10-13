@@ -7,8 +7,15 @@
 `docker-compose.yml` から `Dockerfile` を読み込んで、イメージやコンテナの操作をしているという感じです。
 
 ```
+# 依存ライブラリのインストール
+yarn install
+
+# NestJS のビルド (dist ディレクトリが作成されます)
+yarn build
+
 # コンテナの起動
 # イメージがない場合は、イメージのビルドからコンテナの起動までを行います
+# http://localhost:3000 で API サーバーが起動します
 docker compose up
 
 # デーモンで起動 (基本的にはこっちを使えばよいかと)
